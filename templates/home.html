@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      .fullscreen-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 40vh;
+        background-color: transparent;
+        z-index: 9999;
+      }
+    </style>
+
+<div class="fullscreen-image">
+  <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo">
+</div>
+
+    <h1>My First Flaskapp Project</h1>
+    <p class="lead">This application is built on the Python Flask framework and is the focus for the Python from Scratch so it will help for the people will want to learn Flask framework</p>
+    <style>
+      p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 45vh;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+  </div>
+{% endblock %}
